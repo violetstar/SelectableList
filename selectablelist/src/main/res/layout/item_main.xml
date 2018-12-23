@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/viewGroup"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.hanks.library.AnimateCheckBox
+        android:id="@+id/cbSelectAll"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="15dp"
+        app:animDuration="200"
+        app:checkedColor="#00f"
+        app:layout_constraintStart_toEndOf="@+id/tvName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineColor="#fff"
+        app:lineWidth="1.2dp"
+        app:unCheckColor="#ff0" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewIcon"
+        app:layout_constraintStart_toEndOf="@+id/imageViewIcon"
+        app:layout_constraintTop_toTopOf="@+id/imageViewIcon" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/expandable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:el_duration="1000"
+        app:el_expanded="false"
+        app:el_parallax="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbSelectAll">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Fixed height" />
+
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+    <com.github.zagum.expandicon.ExpandIconView
+        android:id="@+id/expandedIcon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:eiv_animationDuration="300"
+        app:eiv_color="#000"
+        app:eiv_colorIntermediate="#512da8"
+        app:eiv_colorLess="#512da8"
+        app:eiv_colorMore="#512da8"
+        app:eiv_padding="8dp"
+        app:eiv_roundedCorners="false"
+        app:eiv_switchColor="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cbSelectAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_drive" />
+
+</android.support.constraint.ConstraintLayout>
